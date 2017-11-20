@@ -41,7 +41,7 @@ namespace dgWatson2Dogagan
             {
                 Console.WriteLine(filename + "を処理中...");
 
-                var WatsonRes = DynamicJson.Parse(File.ReadAllText(@filename));
+                var WatsonRes = DynamicJson.Parse(File.OpenRead(filename));
                 //話者調査用ディクショナリを作成（開始タイムコードと話者コードのペア
                 var speaker = new Dictionary<double, string>();
                 //JSON後半にあるspeaker_labelsの各セットを列挙
@@ -88,13 +88,7 @@ namespace dgWatson2Dogagan
                     }
                 }
                 //テキストファイル書き出し
-                System.IO.StreamWriter sw = new System.IO.StreamWriter(
-                    filename + ".txt",
-                    false,
-                    System.Text.Encoding.GetEncoding("UTF-8"));
-                sw.Write(SaveText);
-                //閉じる
-                sw.Close();
+                File.WriteAllText(filename + ".txt", SaveText);
             }
         }
 
