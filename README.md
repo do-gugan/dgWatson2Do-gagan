@@ -23,4 +23,4 @@ c:¥ > dgWatson2Do-gagan json_from_watson.txt
 開発自体はVisual Studio for Macで行っているので、Macで実行可能なビルドも可能ははずですがまだ詳しく調べていません。
 
 # クレジット
-JSONデータのパースに、MicrosoftのDynamicJsonライブラリを使用しています。
+JSONデータのパースに、[DynamicJson](https://dynamicjson.codeplex.com)ライブラリを使用しています。
